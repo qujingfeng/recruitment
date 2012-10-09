@@ -1,0 +1,21 @@
+objects=main.o server_process.o global.o read_file.o add.o search.o\
+	delete.o help.o help_.o read_file.o
+
+edit:$(objects)
+	cc -o edit $(objects)
+
+main.o:server_process.h
+server_process.o:global.h
+global.o:global.h
+read_file.o:global.h
+add.o:global.h
+search.o:global.h
+delete.o:global.h
+help.o:global.h
+help_:global.h
+read_file.o:global.h
+
+.PHONY:clean
+clean:
+	rm edit $(objects)
+        
